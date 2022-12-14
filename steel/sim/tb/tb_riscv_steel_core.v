@@ -193,9 +193,9 @@ module tb_riscv_steel_core();
       // Clear signature
       for(i = 0; i < 2048;   i=i+1) current_test_goldenref[i] = 32'b0;
       // Load test program into RAM
-      $readmemh(riscv_test_program[k],ram);      
+      $readmemh("add-01.mem",ram);      
       // Load reference signature for this test
-      $readmemh(riscv_test_program_goldenref[k],current_test_goldenref);   
+      $readmemh("add-01.reference.mem",current_test_goldenref);   
       // Execution is aborted if j reaches 500000 cycles (~1ms)
       for(j = 0; j < 500000; j=j+1) begin
         #20;
