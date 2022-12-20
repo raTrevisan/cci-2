@@ -83,24 +83,7 @@ puts "The number of exceptions is [llength [vfind "design:$DESIGN" -exception *]
 
 #set_db "design:$DESIGN" .force_wireload <wireload name>
 
-if {![file exists ${_LOG_PATH}]} {
-  file mkdir ${_LOG_PATH}
-  puts "Creating directory ${_LOG_PATH}"
-}
-
-if {![file exists ${_OUTPUTS_PATH}]} {
-  file mkdir ${_OUTPUTS_PATH}
-  puts "Creating directory ${_OUTPUTS_PATH}"
-}
-
-if {![file exists ${_REPORTS_PATH}]} {
-  file mkdir ${_REPORTS_PATH}
-  puts "Creating directory ${_REPORTS_PATH}"
-}
-report_timing -lint
-
-
-###################################################################################
+###############################################################################
 ## Define cost groups (clock-clock, clock-output, input-clock, input-output)
 ###################################################################################
 

@@ -62,68 +62,73 @@ waveform set \
 waveform baseline set -time 0
 
 set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.z
+	simulator::tb_riscv_steel_core.clock
 	} ]
 set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.test_error_flag
+	{simulator::tb_riscv_steel_core.current_test_goldenref[0:2047]}
 	} ]
 set id [waveform add -signals  {
-	{simulator::tb_riscv_steel_core.riscv_test_program_goldenref[280:0]}
-	} ]
-set id [waveform add -signals  {
-	{simulator::tb_riscv_steel_core.riscv_test_program[240:0]}
-	} ]
-set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.reset
-	} ]
-set id [waveform add -signals  {
-	{simulator::tb_riscv_steel_core.ram[0:16383]}
-	} ]
-set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.n
-	} ]
-set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.m
-	} ]
-set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.k
-	} ]
-set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.j
-	} ]
-set id [waveform add -signals  {
-	{simulator::tb_riscv_steel_core.instruction_in[31:0]}
-	} ]
-set id [waveform add -signals  {
-	{simulator::tb_riscv_steel_core.instruction_address[31:0]}
-	} ]
-set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.i
-	} ]
-set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.data_write_request
-	} ]
-set id [waveform add -signals  {
-	{simulator::tb_riscv_steel_core.data_write_mask[3:0]}
-	} ]
-set id [waveform add -signals  {
-	{simulator::tb_riscv_steel_core.data_rw_address[31:0]}
-	} ]
-set id [waveform add -signals  {
-	{simulator::tb_riscv_steel_core.data_out[31:0]}
+	simulator::tb_riscv_steel_core.current_test_goldenref_match
 	} ]
 set id [waveform add -signals  {
 	{simulator::tb_riscv_steel_core.data_in[31:0]}
 	} ]
 set id [waveform add -signals  {
-	simulator::tb_riscv_steel_core.current_test_goldenref_match
+	{simulator::tb_riscv_steel_core.data_out[31:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_riscv_steel_core.data_rw_address[31:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_riscv_steel_core.data_write_mask[3:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_riscv_steel_core.data_write_request
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_riscv_steel_core.i
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_riscv_steel_core.instruction_address[31:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_riscv_steel_core.instruction_in[31:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_riscv_steel_core.j
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_riscv_steel_core.k
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_riscv_steel_core.m
 	} ]
 waveform hierarchy collapse $id
 set id [waveform add -signals  {
-	{simulator::tb_riscv_steel_core.current_test_goldenref[0:2047]}
+	simulator::tb_riscv_steel_core.n
 	} ]
+set id [waveform add -signals  {
+	{simulator::tb_riscv_steel_core.ram[0:16383]}
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_riscv_steel_core.reset
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_riscv_steel_core.riscv_test_program[240:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::tb_riscv_steel_core.riscv_test_program_goldenref[280:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::tb_riscv_steel_core.test_error_flag
+	} ]
+waveform hierarchy collapse $id
+set id [waveform add -signals  {
+	simulator::tb_riscv_steel_core.z
+	} ]
+waveform hierarchy collapse $id
 
-waveform xview limits 64247632ps 64440000ps
+waveform xview limits 54476952ps 66189795ps
 
 #
 # Waveform Window Links
@@ -133,7 +138,7 @@ waveform xview limits 64247632ps 64440000ps
 # Console windows
 #
 console set -windowname Console
-window geometry Console 730x313+130+288
+window geometry Console 730x354+96+168
 
 #
 # Layout selection

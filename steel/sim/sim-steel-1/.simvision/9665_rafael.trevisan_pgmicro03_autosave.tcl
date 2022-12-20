@@ -45,6 +45,6 @@ alias . run
 alias iprof profile
 alias quit exit
 database -open -shm -into waves.shm waves -default
-probe -create -database waves tb_riscv_steel_core.z tb_riscv_steel_core.test_error_flag tb_riscv_steel_core.riscv_test_program_goldenref tb_riscv_steel_core.riscv_test_program tb_riscv_steel_core.reset tb_riscv_steel_core.ram tb_riscv_steel_core.n tb_riscv_steel_core.m tb_riscv_steel_core.k tb_riscv_steel_core.j tb_riscv_steel_core.instruction_in tb_riscv_steel_core.instruction_address tb_riscv_steel_core.i tb_riscv_steel_core.data_write_request tb_riscv_steel_core.data_write_mask tb_riscv_steel_core.data_rw_address tb_riscv_steel_core.data_out tb_riscv_steel_core.data_in tb_riscv_steel_core.current_test_goldenref_match tb_riscv_steel_core.current_test_goldenref
+probe -create -database waves tb_riscv_steel_core.clock tb_riscv_steel_core.current_test_goldenref tb_riscv_steel_core.current_test_goldenref_match tb_riscv_steel_core.data_in tb_riscv_steel_core.data_out tb_riscv_steel_core.data_rw_address tb_riscv_steel_core.data_write_mask tb_riscv_steel_core.data_write_request tb_riscv_steel_core.i tb_riscv_steel_core.instruction_address tb_riscv_steel_core.instruction_in tb_riscv_steel_core.j tb_riscv_steel_core.k tb_riscv_steel_core.m tb_riscv_steel_core.n tb_riscv_steel_core.ram tb_riscv_steel_core.reset tb_riscv_steel_core.riscv_test_program tb_riscv_steel_core.riscv_test_program_goldenref tb_riscv_steel_core.test_error_flag tb_riscv_steel_core.z
 
-simvision -input /home/inf01185/rafael.trevisan/cci-2/steel/sim/sim-steel-1/.simvision/45622_rafael.trevisan_pgmicro03_autosave.tcl.svcf
+simvision -input /home/inf01185/rafael.trevisan/cci-2/steel/sim/sim-steel-1/.simvision/9665_rafael.trevisan_pgmicro03_autosave.tcl.svcf

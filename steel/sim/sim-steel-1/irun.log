@@ -1,5 +1,5 @@
 irun(64): 15.20-s022: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	irun(64)	15.20-s022: Started on Dec 13, 2022 at 22:06:00 -03
+TOOL:	irun(64)	15.20-s022: Started on Dec 14, 2022 at 11:00:40 -03
 irun
 	-f ../rtl/file_list.f
 		-smartorder
@@ -11,8 +11,8 @@ irun
 		../../rtl/riscv_steel_core.v
 		../tb/tb_riscv_steel_core.v
 Recompiling... reason: file '../tb/tb_riscv_steel_core.v' is newer than expected.
-	expected: Thu Sep  8 09:02:51 2022
-	actual:   Thu Sep  8 09:33:45 2022
+	expected: Thu Sep  8 22:03:40 2022
+	actual:   Thu Sep  8 22:26:20 2022
 file: ../../rtl/riscv_steel_core.v
   wire signed   [31:0]  signed_op1;
             |
@@ -51,17 +51,21 @@ file: ../tb/tb_riscv_steel_core.v
 Relinquished control to SimVision...
 ncsim> 
 ncsim> source /tools/cadence/rhel5/INCISIVE_15.20.022/tools/inca/files/ncsimrc
-ncsim> run 12us
-Running test programs from RISC-V Compatibility Test Framework v2.0.
-Ran until 12 US + 0
 ncsim> database -open waves -into waves.shm -default
 Created default SHM database waves
-ncsim> probe -create -shm tb_riscv_steel_core.z tb_riscv_steel_core.test_error_flag tb_riscv_steel_core.riscv_test_program_goldenref tb_riscv_steel_core.riscv_test_program tb_riscv_steel_core.reset tb_riscv_steel_core.ram tb_riscv_steel_core.n tb_riscv_steel_core.m tb_riscv_steel_core.k tb_riscv_steel_core.j tb_riscv_steel_core.instruction_in tb_riscv_steel_core.instruction_address tb_riscv_steel_core.i tb_riscv_steel_core.data_write_request tb_riscv_steel_core.data_write_mask tb_riscv_steel_core.data_rw_address tb_riscv_steel_core.data_out tb_riscv_steel_core.data_in tb_riscv_steel_core.current_test_goldenref_match tb_riscv_steel_core.current_test_goldenref
+ncsim> probe -create -shm tb_riscv_steel_core.clock tb_riscv_steel_core.current_test_goldenref tb_riscv_steel_core.current_test_goldenref_match tb_riscv_steel_core.data_in tb_riscv_steel_core.data_out tb_riscv_steel_core.data_rw_address tb_riscv_steel_core.data_write_mask tb_riscv_steel_core.data_write_request tb_riscv_steel_core.i tb_riscv_steel_core.instruction_address tb_riscv_steel_core.instruction_in tb_riscv_steel_core.j tb_riscv_steel_core.k tb_riscv_steel_core.m tb_riscv_steel_core.n tb_riscv_steel_core.ram tb_riscv_steel_core.reset tb_riscv_steel_core.riscv_test_program tb_riscv_steel_core.riscv_test_program_goldenref tb_riscv_steel_core.test_error_flag tb_riscv_steel_core.z
 Created probe 1
 ncsim> run
+Running test programs from RISC-V Compatibility Test Framework v2.0.
 Passed on test: 
 RISC-V Steel Core passed ALL tests from RISC-V Compatibility Test Framework v2.0.
-Simulation stopped via $stop(1) at time 64440 NS + 0
+Simulation stopped via $stop(1) at time 64360 NS + 0
+ncsim> run
+...Regained control from SimVision
+-------------------------------------
+Simulation interrupted at 116558597270 NS + 0
 ncsim> ^C
+ncsim> 
+ncsim: *W,CMUSEX: Control-D in interactive input - one more to exit.
 ncsim> exit
-TOOL:	irun(64)	15.20-s022: Exiting on Dec 13, 2022 at 22:14:49 -03  (total: 00:08:49)
+TOOL:	irun(64)	15.20-s022: Exiting on Dec 14, 2022 at 14:26:35 -03  (total: 03:25:55)

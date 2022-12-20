@@ -183,7 +183,7 @@ module tb_riscv_steel_core();
       
     $display("Running test programs from RISC-V Compatibility Test Framework v2.0.");
     
-    for(k = 0; k < 4; k=k+1) begin            
+    for(k = 0; k < 1; k=k+1) begin            
       // Reset
       reset = 1'b1;
       #20;
@@ -193,21 +193,8 @@ module tb_riscv_steel_core();
       // Clear signature
       for(i = 0; i < 2048;   i=i+1) current_test_goldenref[i] = 32'b0;
 
-      // Load test program into RAM "ADD" and its reference signature to ram
-      if (k == 1) begin
-        $readmemh("../tb/sub-01.mem",ram);      
-        $readmemh("../tb/sub-01.reference.mem",current_test_goldenref);
-      end   
-      // Load test program into RAM "XOR" and its reference signature to ram
-      if (k == 2) begin
-        $readmemh("../tb/xor-01.mem",ram);      
-        $readmemh("../tb/xor-01.reference.mem",current_test_goldenref);
-      end
-      // Load test program into RAM "BNE" and its reference signature to ram
-      if (k == 3) begin
-        $readmemh("../tb/sub-01.mem",ram);      
-        $readmemh("../tb/sub-01.reference.mem",current_test_goldenref);
-      end   
+      $readmemh("../tb/xor-01.mem",ram);      
+      $readmemh("../tb/xor-01.reference.mem",current_test_goldenref);
              
       // Execution is aborted if j reaches 500000 cycles (~1ms)
       for(j = 0; j < 500000; j=j+1) begin
